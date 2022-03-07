@@ -2,10 +2,9 @@ const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 const compression = require("compression");
-const apiRoutes = require("./routes/api.js");
-const connection_url = "mongodb+srv://ivydo:796!AQnp-ZjXuT2@cluster0.quy5e.mongodb.net/budgetDB"
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/budget";
 
 const app = express();
 
@@ -17,14 +16,13 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-const mongoUri = process.env.MONGODB_URI || "mongodb://localhost/budget" || connection_url;
-mongoose.connect(mongoUri, {
+mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
-  useFindAndModify: false,
-  useUnifiedTopology: true
+  useFindAndModify: false
 });
 
-app.use(apiRoutes);
+// routes
+app.use(require("./routes/api.js"));
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
