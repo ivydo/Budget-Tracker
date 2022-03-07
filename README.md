@@ -10,7 +10,7 @@ Giving users a fast and easy way to track their money is important, but allowing
 [Link to app deployed](https://evening-mountain-29660.herokuapp.com/)
 
 ### Installation
-To install the required dependencies, run npm install
+To install the required dependencies, run `npm install`.
 
 This package assumes there is a MongoDB server running on localhost:27017. If your server is running somewhere else, you can edit server.js to reflect that.
 
