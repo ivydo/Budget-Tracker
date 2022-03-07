@@ -7,6 +7,7 @@ Giving users a fast and easy way to track their money is important, but allowing
 ![Budget Tracker in Use](/public/images/screenshot.jpg)
 
 ### App Deployed to Heroku
+[Link to app deployed](https://evening-mountain-29660.herokuapp.com/)
 
 ### Installation
 To install the required dependencies, run npm install
